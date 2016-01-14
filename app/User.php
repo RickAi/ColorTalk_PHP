@@ -13,6 +13,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 {
     use Authenticatable, CanResetPassword, EntrustUserTrait;
 
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 0;
+    const THIRD_TRUE = 1;
+    const THIRD_FALSE = 0;
+
     /**
      * The database table used by the model.
      *
@@ -25,12 +30,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password', 'is_third', 'gender', 'birthday'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['password'];
+
+    public function isThird(){
+        return ($this->is_third == User::THIRD_TRUE);
+    }
+
 }
