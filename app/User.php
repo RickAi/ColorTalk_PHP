@@ -43,4 +43,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return ($this->is_third == User::THIRD_TRUE);
     }
 
+    public function images(){
+        return $this->hasMany('App\Image');
+    }
+
+    public function moments(){
+        return $this->hasMany('App\Moment');
+    }
+
 }

@@ -15,7 +15,7 @@ class UserRepository
 
     // create a new user
     // ['name', 'email', 'password', 'is_third', 'gender', 'birthday'];
-    public function createNewAccount($payload){
+        public function createNewAccount($payload){
         \DB::beginTransaction();
         try{
             $user = User::create($payload);
