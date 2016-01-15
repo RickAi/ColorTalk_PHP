@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// User
-Route::post('users', 'UserController@createUser');
-Route::get('users', 'UserController@getUsers');
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', function ($api) {
+    $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
+        // User
+        $api->post('users', 'UserController@createUser');
+        $api->get('users', 'UserController@getUsers');
+
+        // Photo
+
+    });
+});

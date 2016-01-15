@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Api\Controllers;
 
+use App\Api\Transformers\UserTransformer;
 use App\Repositories\UserRepository;
 use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class UserController extends Controller
+class UserController extends BaseController
 {
     protected $userRepo;
 
@@ -19,7 +20,7 @@ class UserController extends Controller
 
     public function getUsers(){
         $users = User::all();
-        return $users->toJson();
+        return $this->collection($users, new UserTransformer);
     }
 
     // create a account
@@ -30,7 +31,7 @@ class UserController extends Controller
         if($result_array['result']){
             return response()->json(['status' => true, 'user' => $result_array['content']]);
         } else{
-            return response()->json(['status' => false, 'message' => $result_array['message']]);
+            return $this->response->error($result_array['message'], 422);
         }
     }
 }

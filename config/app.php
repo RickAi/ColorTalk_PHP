@@ -148,6 +148,8 @@ return [
          * Third party providers
          */
         Forone\Admin\Providers\ForoneServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        itbdw\QiniuStorage\QiniuFilesystemServiceProvider::class,
 
     ],
 

@@ -43,6 +43,14 @@ return [
 
     'disks' => [
 
+        'qiniu' => [
+            'driver' => 'qiniu',
+            'domain' => '7xkmui.com1.z0.glb.clouddn.com',   //你的七牛域名
+            'access_key'    => 'njKBoEukwQwLiSeFeUI_SwdVcKjHxhTkuP7xN4jv',   //AccessKey
+            'secret_key' => 'zuGse8vYFyP1xs-pmG9D-nbg4kflJ4k52vuDsPAh',      //SecretKey
+            'bucket' => 'mdpicture',                                 //Bucket名字
+        ],
+
         'local' => [
             'driver' => 'local',
             'root'   => storage_path('app'),
