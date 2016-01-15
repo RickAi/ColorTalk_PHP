@@ -29,7 +29,8 @@ class MomentController extends BaseController
     // create a new moment
     public function create(Request $request)
     {
-        $check_result = $this->requestCheck($request, ['user_id', 'image_name']);
+        $check_result = $this->requestCheck($request,
+            ['user_id' => 'required', 'image_name' => 'required']);
         if (!$check_result['result']) {
             return $this->response->error($check_result['message'], 422);
         }
