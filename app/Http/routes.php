@@ -31,6 +31,7 @@ $api->version('v1', function ($api) {
 
         // Moment
         $api->get('moments', 'MomentController@index');
+        // POST ['user_id', 'image_name', 'text']
         $api->post('moments', 'MomentController@create');
         $api->delete('moments/{moments}', 'MomentController@delete');
 

@@ -9,7 +9,38 @@
 namespace App\Repositories;
 
 
+use App\Image;
+use App\Moment;
+
 class MomentRepository
 {
+
+    // ['user_id', 'image_name', 'text']
+    public function createNewMoment($payload)
+    {
+        \DB::beginTransaction();
+        try {
+            // create image first
+            $image_id = Image::create([
+                'user_id' => $payload['user_id'],
+                'type' => Image::TYPE_MOMENT,
+                'url' => env('QINIU_DOAMIN', "7xkmui.com1.z0.glb.clouddn.com") . '/' . $payload['image_name'],
+            ])->id;
+
+            $text = isset($payload['text']) ? $payload['text'] : "";
+            // then create moment
+            $moment = Moment::create([
+                'user_id' => $payload['user_id'],
+                'image_id' => $image_id,
+                'text' => $text,
+            ]);
+            \DB::commit();
+            // return the content
+            return array('result' => true, 'content' => $moment);
+        } catch (\Exception $e) {
+            \DB::rollBack();
+            return array('result' => false, 'message' => $e->getMessage());
+        }
+    }
 
 }
