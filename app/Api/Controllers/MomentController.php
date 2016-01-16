@@ -39,7 +39,7 @@ class MomentController extends BaseController
         $result_array = $this->momentRepo->createNewMoment($payload);
         if ($result_array['result']) {
             $moment = $result_array['content'];
-            return $this->item($moment, new MomentTransformer);
+            return response()->json($moment);
         } else {
             return $this->response->error($result_array['message'], 422);
         }

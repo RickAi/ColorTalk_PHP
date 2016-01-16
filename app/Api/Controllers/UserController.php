@@ -29,7 +29,8 @@ class UserController extends BaseController
         $result_array = $this->userRepo->createNewAccount($payload);
 
         if($result_array['result']){
-            return response()->json(['status' => true, 'user' => $result_array['content']]);
+            $user = $result_array['content'];
+            return response()->json($user);
         } else{
             return $this->response->error($result_array['message'], 422);
         }
