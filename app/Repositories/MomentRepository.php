@@ -24,7 +24,7 @@ class MomentRepository
             $image_id = Image::create([
                 'user_id' => $payload['user_id'],
                 'type' => Image::TYPE_MOMENT,
-                'url' => env('QINIU_DOAMIN', "7xkmui.com1.z0.glb.clouddn.com") . '/' . $payload['image_name'],
+                'url' => "http://".env('QINIU_DOAMIN', "7xkmui.com1.z0.glb.clouddn.com") . '/' . $payload['image_name'],
             ])->id;
 
             $text = isset($payload['text']) ? $payload['text'] : "";
