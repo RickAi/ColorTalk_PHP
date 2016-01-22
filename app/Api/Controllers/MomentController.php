@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use itbdw\QiniuStorage\QiniuStorage;
 
 class MomentController extends BaseController
 {
@@ -22,6 +23,9 @@ class MomentController extends BaseController
     // get all the moments
     public function index()
     {
+        // TODO: 分页
+//        $moments = Moment::paginate(6);
+//        return $this->paginator($moments, new MomentTransformer);
         $moments = Moment::all();
         return $this->collection($moments, new MomentTransformer);
     }

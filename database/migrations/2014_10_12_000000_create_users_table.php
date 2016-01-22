@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('is_third');
             $table->tinyInteger('gender');
             $table->date('birthday');
+            $table->string('uid')->unique()->nullable();
             $table->timestamps();
         });
     }

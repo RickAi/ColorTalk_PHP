@@ -22,8 +22,12 @@ $api->version('v1', function ($api) {
         /*
          * User
          */
-        // POST ['name', 'email', 'password', 'is_third', 'gender', 'birthday'];
-        $api->post('users', 'UserController@createUser');
+        // POST ['email', 'password'];
+        // 普通的注册才使用这个接口,第三方直接登录即可
+        $api->post('register', 'UserController@createUser');
+        // POST ['email', 'password', 'is_third']
+        // POST ['uid', 'is_third']
+        $api->post('login', 'UserController@login');
         $api->get('users', 'UserController@getUsers');
 
         /*
