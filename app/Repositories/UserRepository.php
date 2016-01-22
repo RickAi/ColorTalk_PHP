@@ -21,8 +21,8 @@ class UserRepository
         \DB::beginTransaction();
         try {
             $user = User::create([
-                'name' => $payload->email,
-                'email' => $payload->email,
+                'name' => User::LOCAL_NEW_USER,
+                'email' => $payload['email'],
                 'password' => bcrypt($payload['password']),
                 'is_third' => User::THIRD_FALSE,
             ]);
@@ -30,7 +30,7 @@ class UserRepository
             return array('result' => true, 'content' => $user);
         } catch (\Exception $e) {
             \DB::rollBack();
-            return array('result' => false, 'message' => 'db error happen when create new user!');
+            return array('result' => false, 'message' => "The user already exist!");
         }
     }
 
@@ -48,8 +48,8 @@ class UserRepository
     }
 
     private function localAccountRegister($email, $password){
-        if(User::isAccountRegistered($email)){
-            return array('result' => false, 'message' => 'The email has been registered!');
+        if(!User::isAccountRegistered($email)){
+            return array('result' => false, 'message' => 'The email has not been registered!');
         }
         if(!User::isAccountValid($email, $password)){
             return array('result' => false, 'message' => 'The email and password do not match!');
