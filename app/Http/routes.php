@@ -46,10 +46,14 @@ $api->version('v1', function ($api) {
         $api->delete('moments/{moments}', 'MomentController@delete');
 
         /*
-         * Qiniu
+         * Token
+         *
          */
         // POST ['image_name']
-        $api->post('qiniu/token', 'QiniuController@getToken');
+        $api->post('token/qiniu', 'TokenController@qiniuToken');
+        // POST ['user_id', 'name', 'uri']
+        $api->post('token/rong', 'TokenController@rongToken');
+
 
     });
 });
