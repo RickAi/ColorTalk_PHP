@@ -24,7 +24,7 @@ class MomentController extends BaseController
     public function index()
     {
         // TODO: 分页
-        $moments = \DB::table("moments")->orderBy("created_at", "desc")->paginate(10);
+        $moments = Moment::orderBy('created_at', 'desc')->paginate(10);
         return $this->paginator($moments, new MomentTransformer);
     }
 
