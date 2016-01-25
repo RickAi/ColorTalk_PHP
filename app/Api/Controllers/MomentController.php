@@ -24,10 +24,8 @@ class MomentController extends BaseController
     public function index()
     {
         // TODO: 分页
-//        $moments = Moment::paginate(6);
-//        return $this->paginator($moments, new MomentTransformer);
-        $moments = Moment::all();
-        return $this->collection($moments, new MomentTransformer);
+        $moments = Moment::paginate(10);
+        return $this->paginator($moments, new MomentTransformer);
     }
 
     // create a new moment
