@@ -17,7 +17,7 @@ class Image extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function getImages(){
-
+    public static function getPrivateImages($user_id){
+        return Image::where('user_id', $user_id)->where('type', Image::TYPE_PERSONAL)->get();
     }
 }

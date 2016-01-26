@@ -33,6 +33,8 @@ $api->version('v1', function ($api) {
         /*
          * Image
          */
+        // POST ['user_id']
+        $api->post('images/private', 'ImageController@getPrivateImages');
         $api->get('images', 'ImageController@index');
         $api->post('images', 'ImageController@upload');
         $api->delete('images/{images}', 'ImageController@delete');

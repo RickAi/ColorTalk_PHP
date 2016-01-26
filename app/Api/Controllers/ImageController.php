@@ -2,14 +2,14 @@
 
 namespace App\Api\Controllers;
 
+use App\Api\Transformers\ImageTransformer;
+use App\Image;
 use App\Repositories\ImageRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use itbdw\QiniuStorage\QiniuStorage;
 
-class ImageController extends Controller
+class ImageController extends BaseController
 {
     protected $imageRepo;
 
@@ -24,13 +24,27 @@ class ImageController extends Controller
 
     }
 
+    public function getPrivateImages(Request $request)
+    {
+        $check_result = $this->requestCheck($request, ['user_id' => 'required']);
+        if (!$check_result['result']) {
+            return $this->response->error($check_result['message'], 422);
+        }
+
+        $payload = $request->all();
+        $images = Image::getPrivateImages($payload['user_id']);
+        return $this->collection($images, new ImageTransformer);
+    }
+
     // upload personal image
-    public function upload(){
+    public function upload()
+    {
 
     }
 
     // delete personal image
-    public function delete(){
+    public function delete()
+    {
 
     }
 }

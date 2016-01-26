@@ -10,6 +10,7 @@ namespace App\Api\Transformers;
 
 
 use App\Image;
+use League\Fractal\TransformerAbstract;
 
 class ImageTransformer extends TransformerAbstract
 {
