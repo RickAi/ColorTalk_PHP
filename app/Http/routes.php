@@ -48,6 +48,13 @@ $api->version('v1', function ($api) {
         $api->delete('moments/{moments}', 'MomentController@delete');
 
         /*
+         * Comment
+         */
+        $api->get('moments/{moments}/comments', 'CommentController@index');
+        // POST ['user_id', 'moment_id', 'text']
+        $api->post('moments/{moments}/comments', 'CommentController@store');
+
+        /*
          * Token
          *
          */

@@ -17,4 +17,12 @@ class Moment extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function comments(){
+        $this->hasMany('App\Moment');
+    }
+
+    public function likes(){
+        $this->hasMany('App\Like');
+    }
 }
