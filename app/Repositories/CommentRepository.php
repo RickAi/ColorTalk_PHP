@@ -9,10 +9,17 @@
 namespace App\Repositories;
 
 
+use App\Comment;
+
 class CommentRepository
 {
 
     public function createComment($payload){
+
+    }
+
+    // ['user_id']
+    public function likeComment($payload, Comment $comment){
 
     }
 

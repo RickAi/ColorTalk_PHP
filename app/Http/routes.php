@@ -42,9 +42,12 @@ $api->version('v1', function ($api) {
         /*
          * Moment
          */
-        $api->get('moments', 'MomentController@index');
+        // ['user_id']
+        $api->post('getMoments', 'MomentController@getMoments');
         // POST ['user_id', 'image_name', 'text']
         $api->post('moments', 'MomentController@create');
+        // POST ['user_id']
+        $api->post('moments/{moments}/like', 'MomentController@likeMoment');
         $api->delete('moments/{moments}', 'MomentController@delete');
 
         /*

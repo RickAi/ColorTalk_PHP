@@ -43,4 +43,9 @@ class MomentRepository
         }
     }
 
+    // ['user_id']
+    public function likeMoment($payload, Moment $moment){
+
+    }
+
 }

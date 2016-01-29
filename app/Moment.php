@@ -19,10 +19,20 @@ class Moment extends Model
     }
 
     public function comments(){
-        $this->hasMany('App\Moment');
+        return $this->hasMany('App\Moment');
     }
 
     public function likes(){
-        $this->hasMany('App\Like');
+        return $this->hasMany('App\Like');
+    }
+
+    public function isUserLiked($user_id){
+        $likes = $this->likes;
+        foreach ($likes as $like) {
+            if($like->user_id == $user_id){
+                return true;
+            }
+        }
+        return false;
     }
 }

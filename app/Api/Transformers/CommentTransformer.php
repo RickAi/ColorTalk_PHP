@@ -15,12 +15,12 @@ use League\Fractal\TransformerAbstract;
 class CommentTransformer extends TransformerAbstract
 {
 
-//    protected $request_user_id;
-//
-//    public function __construct($user_id)
-//    {
-//        $this->request_user_id = $user_id;
-//    }
+    protected $request_user_id;
+
+    public function __construct($user_id)
+    {
+        $this->request_user_id = $user_id;
+    }
 
     public function transform(Comment $comment)
     {
@@ -31,7 +31,9 @@ class CommentTransformer extends TransformerAbstract
             'moment_id' => $comment->moment_id,
             'text' => $comment->text,
             'like_count' => $likes->count(),
-//            'is_liked' => $comment->isUserLiked($request_user_id),
+            'is_liked' => $comment->isUserLiked($this->request_user_id),
+            'created_at' => $comment->created_at->toDateTimeString(),
+            'updated_at' => $comment->updated_at->toDateTimeString(),
         ];
     }
 }

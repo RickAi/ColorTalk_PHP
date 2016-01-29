@@ -21,7 +21,9 @@ class UserTransformer extends TransformerAbstract
             'email' => $user->email,
             'is_third' => $user->is_third,
             'gender' => $user->gender,
-            'birthday' => $user->birthday
+            'birthday' => $user->birthday,
+            'created_at' => $user->created_at->toDateTimeString(),
+            'updated_at' => $user->updated_at->toDateTimeString(),
         ];
     }
 }
