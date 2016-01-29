@@ -50,9 +50,12 @@ $api->version('v1', function ($api) {
         /*
          * Comment
          */
-        $api->get('moments/{moments}/comments', 'CommentController@index');
+        // POST ['user_id']
+        $api->post('moments/{moments}/getComments', 'CommentController@getComments');
         // POST ['user_id', 'moment_id', 'text']
-        $api->post('moments/{moments}/comments', 'CommentController@store');
+        $api->post('moments/{moments}/comments', 'CommentController@createComment');
+        // POST ['user_id']
+        $api->post('moments/{moments}/comments/{comments}/like', 'CommentController@likeComment');
 
         /*
          * Token

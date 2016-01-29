@@ -21,4 +21,14 @@ class Comment extends Model
     public function likes(){
         return $this->hasMany('App\Like');
     }
+
+    public function isUserLiked($user_id){
+        $likes = $this->likes;
+        foreach ($likes as $like) {
+            if($like->user_id == $user_id){
+                return true;
+            }
+        }
+        return false;
+    }
 }

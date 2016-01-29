@@ -14,7 +14,6 @@ class CreateLikesTable extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('count')->default(0);
             $table->integer('type');
             $table->integer('moment_id')->unsigned()->index()->nullable()->default(0);
             $table->foreign('moment_id')->references('id')->on('moments')->onDelete('cascade');
