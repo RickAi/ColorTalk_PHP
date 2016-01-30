@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLikesTable extends Migration
+class CreateMomentLikesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateLikesTable extends Migration
     {
         Schema::create('moment_likes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('moment_id')->unsigned()->index()->nullable()->default(0);
+            $table->integer('moment_id')->unsigned()->index();
             $table->foreign('moment_id')->references('id')->on('moments')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

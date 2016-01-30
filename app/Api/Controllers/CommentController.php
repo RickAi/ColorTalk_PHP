@@ -63,8 +63,8 @@ class CommentController extends BaseController
         $payload = $request->all();
         $result_array = $this->commentRepo->likeComment($payload, $comment);
         if ($result_array['result']) {
-            $moment = $result_array['content'];
-            return response()->json($moment);
+            $comment = $result_array['content'];
+            return response()->json($comment);
         } else {
             return $this->response->error($result_array['message'], 422);
         }

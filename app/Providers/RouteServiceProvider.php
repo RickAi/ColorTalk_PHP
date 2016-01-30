@@ -29,6 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('users', 'App\User');
         $router->model('images', 'App\Image');
         $router->model('moments', 'App\Moment');
+        $router->model('comments', 'App\Comment');
     }
 
     /**

@@ -36,6 +36,10 @@ class CommentRepository
 
     // ['user_id']
     public function likeComment($payload, Comment $comment){
+        if($comment->isUserLiked($payload['user_id'])){
+            return array('result' => false, 'message' => 'The comment has been liked by this user!');
+        }
+
         \DB::beginTransaction();
         try {
             $like = CommentLike::create([

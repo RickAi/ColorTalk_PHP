@@ -47,6 +47,10 @@ class MomentRepository
     // ['user_id']
     public function likeMoment($payload, Moment $moment)
     {
+        if($moment->isUserLiked($payload['user_id'])){
+            return array('result' => false, 'message' => 'The moment has been liked by this user!');
+        }
+
         \DB::beginTransaction();
         try {
             $like = MomentLike::create([
