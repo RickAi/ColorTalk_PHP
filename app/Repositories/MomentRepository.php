@@ -8,9 +8,10 @@
 
 namespace App\Repositories;
 
-
 use App\Image;
+use App\Like;
 use App\Moment;
+use App\MomentLike;
 
 class MomentRepository
 {
@@ -24,7 +25,7 @@ class MomentRepository
             $image_id = Image::create([
                 'user_id' => $payload['user_id'],
                 'type' => Image::TYPE_MOMENT,
-                'url' => "http://".env('QINIU_DOAMIN', "7xkmui.com1.z0.glb.clouddn.com") . '/' . $payload['image_name'],
+                'url' => "http://" . env('QINIU_DOAMIN', "7xkmui.com1.z0.glb.clouddn.com") . '/' . $payload['image_name'],
             ])->id;
 
             $text = isset($payload['text']) ? $payload['text'] : "";
@@ -44,8 +45,20 @@ class MomentRepository
     }
 
     // ['user_id']
-    public function likeMoment($payload, Moment $moment){
-
+    public function likeMoment($payload, Moment $moment)
+    {
+        \DB::beginTransaction();
+        try {
+            $like = MomentLike::create([
+                'moment_id' => $moment->id,
+                'user_id' => $payload['user_id'],
+            ]);
+            \DB::commit();
+            return array('result' => true, 'content' => $like);
+        } catch (\Exception $e) {
+            \DB::rollBack();
+            return array('result' => false, 'message' => $e->getMessage());
+        }
     }
 
 }

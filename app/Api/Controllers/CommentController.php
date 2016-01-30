@@ -4,7 +4,7 @@ namespace App\Api\Controllers;
 
 use App\Api\Transformers\CommentTransformer;
 use App\Comment;
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use App\Moment;
 use App\Repositories\CommentRepository;
 
@@ -35,7 +35,20 @@ class CommentController extends BaseController
     // create a comment
     public function createComment(Request $request, Moment $moment)
     {
+        $check_result = $this->requestCheck($request,
+            ['user_id' => 'required', 'text' => 'required']);
+        if (!$check_result['result']) {
+            return $this->response->error($check_result['message'], 422);
+        }
 
+        $payload = $request->all();
+        $result_array = $this->commentRepo->createComment($payload, $moment);
+        if ($result_array['result']) {
+            $moment = $result_array['content'];
+            return response()->json($moment);
+        } else {
+            return $this->response->error($result_array['message'], 422);
+        }
     }
 
     // increase the comment's like number

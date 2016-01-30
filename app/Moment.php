@@ -23,7 +23,7 @@ class Moment extends Model
     }
 
     public function likes(){
-        return $this->hasMany('App\Like');
+        return $this->hasMany('App\MomentLike');
     }
 
     public function isUserLiked($user_id){

@@ -55,7 +55,7 @@ $api->version('v1', function ($api) {
          */
         // POST ['user_id']
         $api->post('moments/{moments}/getComments', 'CommentController@getComments');
-        // POST ['user_id', 'moment_id', 'text']
+        // POST ['user_id', 'text']
         $api->post('moments/{moments}/comments', 'CommentController@createComment');
         // POST ['user_id']
         $api->post('moments/{moments}/comments/{comments}/like', 'CommentController@likeComment');

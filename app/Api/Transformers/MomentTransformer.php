@@ -8,7 +8,6 @@
 
 namespace App\Api\Transformers;
 
-
 use App\Moment;
 use League\Fractal\TransformerAbstract;
 

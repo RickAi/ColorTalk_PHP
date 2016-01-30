@@ -19,7 +19,7 @@ class Comment extends Model
     }
 
     public function likes(){
-        return $this->hasMany('App\Like');
+        return $this->hasMany('App\CommentLike');
     }
 
     public function isUserLiked($user_id){
