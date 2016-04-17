@@ -5,7 +5,7 @@
                 <!-- brand -->
                 <a class="navbar-brand">
                     <img src="{{ asset($siteConfig['logo']) }}" alt="." style="width: 24px; height: 24px;">
-                    <span class="hidden-folded m-l inline">{{ $siteConfig['site_name'] }}</span>
+                    {{--<span class="hidden-folded m-l inline">{{ $siteConfig['site_name'] }}</span>--}}
                 </a>
                 <!-- / brand -->
             </div>
