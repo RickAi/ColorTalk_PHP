@@ -13,7 +13,7 @@ return [
         'administrator_auth_controller' => 'Forone\Admin\Controllers\Auth\AuthController'
     ],
     'site_config' => [
-        'site_name' => '',
+        'site_name' => 'ColorTalk Console',
         'title' => 'ColorTalk Console',
         'description' => 'Color Talk information management system',
         'logo' => 'vendor/forone/images/logo.png'

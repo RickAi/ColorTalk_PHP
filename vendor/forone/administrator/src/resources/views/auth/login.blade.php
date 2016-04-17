@@ -19,7 +19,7 @@
         </div>
 
         <div class="p-lg panel md-whiteframe-z1 text-color m">
-            <div class="m-b text-sm">Color Talk console</div>
+            <div class="m-b text-sm"> </div>
             <form name="form" action="{{ url('/admin/auth/login') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
