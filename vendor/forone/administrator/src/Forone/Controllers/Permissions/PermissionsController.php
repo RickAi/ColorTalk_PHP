@@ -26,14 +26,14 @@ class PermissionsController extends BaseController {
     {
         $results = [
             'columns' => [
-                ['id', 'id'],
-                ['name', 'name'],
-                ['nickname', 'display_name'],
-                ['create time', 'created_at'],
-                ['update time', 'updated_at'],
-                ['operation', 'buttons', function ($data) {
+                ['Id', 'id'],
+                ['Name', 'name'],
+                ['Nickname', 'display_name'],
+                ['Create time', 'created_at'],
+                ['Update time', 'updated_at'],
+                ['Operation', 'buttons', function ($data) {
                     $buttons = [
-                        ['edit'],
+                        ['Edit'],
                     ];
                     return $buttons;
                 }]

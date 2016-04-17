@@ -26,25 +26,25 @@ class RolesController extends BaseController {
 
     function __construct()
     {
-        parent::__construct('roles', '角色');
+        parent::__construct('roles', 'Role');
     }
 
     public function index()
     {
         $results = [
             'columns' => [
-                ['id', 'id'],
-                ['name','name'],
-                ['display name', 'display_name'],
-                ['create time', 'created_at'],
-                ['update time', 'updated_at'],
-                ['operation', 'buttons', function ($data) {
+                ['Id', 'id'],
+                ['Name','name'],
+                ['Display name', 'display_name'],
+                ['Create time', 'created_at'],
+                ['Update time', 'updated_at'],
+                ['Operation', 'buttons', function ($data) {
                     $buttons = [];
                     if ($data->name != config('defender.superuser_role', 'superuser')) {
                         $buttons = [
                             ['edit'],
                         ];
-                        array_push($buttons, ['allocate permission', '#modal']);
+                        array_push($buttons, ['Allocate', '#modal']);
                     }
                     return $buttons;
                 }]

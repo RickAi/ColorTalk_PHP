@@ -8,7 +8,7 @@
 
      {!! Html::datagrid($results) !!}
 
-     {!! Html::modal_start('modal','编辑类型配置') !!}
+     {!! Html::modal_start('modal','Edit role') !!}
 
      <div class="md-whiteframe-z0 bg-white">
          {!! Form::open(['method'=>'POST','url'=>'admin/admins/assign-role','id'=>'form_id']) !!}

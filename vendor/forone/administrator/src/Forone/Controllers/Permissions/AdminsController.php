@@ -27,15 +27,15 @@ class AdminsController extends BaseController {
     {
         $results = [
             'columns' => [
-                ['name', 'name'],
-                ['email', 'email'],
-                ['create time', 'created_at'],
-                ['operation', 'buttons', function ($data) {
+                ['Name', 'name'],
+                ['Email', 'email'],
+                ['Create time', 'created_at'],
+                ['Operation', 'buttons', function ($data) {
                     $buttons = [
                         ['edit']
                     ];
                     if (!$data->hasRole(config('defender.superuser_role', 'superuser'))) {
-                        array_push($buttons, ['allocate role', '#modal']);
+                        array_push($buttons, ['Allocate', '#modal']);
                     }
                     return $buttons;
                 }]

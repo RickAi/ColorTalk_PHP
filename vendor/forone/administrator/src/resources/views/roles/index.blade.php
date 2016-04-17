@@ -8,7 +8,7 @@
 
      {!! Html::datagrid($results) !!}
 
-     {!! Html::modal_start('modal','分配权限') !!}
+     {!! Html::modal_start('modal','Allocate permission') !!}
      <div class="md-whiteframe-z0 bg-white">
          {!! Form::open(['method'=>'POST','url'=>'admin/roles/assign-permission','id'=>'form_id']) !!}
          {!! Form::hidden_input('id') !!}

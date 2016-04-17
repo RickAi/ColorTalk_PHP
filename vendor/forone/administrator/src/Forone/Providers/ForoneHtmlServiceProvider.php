@@ -273,8 +273,8 @@ class ForoneHtmlServiceProvider extends ServiceProvider
     private function modalEnd()
     {
         Html::macro('modal_end', function () {
-            return '</div><div><button data-remodal-action="cancel" class="remodal-cancel" style="margin-right: 20px;">取消</button>
-        <button data-remodal-action="confirm" class="remodal-confirm">确认</button></div>';
+            return '</div><div><button data-remodal-action="cancel" class="remodal-cancel" style="margin-right: 20px;">Cancel</button>
+        <button data-remodal-action="confirm" class="remodal-confirm">Yes</button></div>';
         });
     }
 
