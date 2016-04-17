@@ -55,7 +55,7 @@
                     <li>
                         <a md-ink-ripple href="{{ url('admin/auth/logout') }}">
                             <i class="icon mdi-action-exit-to-app i-20"></i>
-                            <span>logout</span>
+                            <span>Logout</span>
                         </a>
                     </li>
                     <li>
@@ -63,7 +63,7 @@
                             <label class="md-check">
                                 <input type="checkbox">
                                 <i class="purple no-icon"></i>
-                                <span class="hidden-folded">hide sidebar</span>
+                                <span class="hidden-folded">Hide Sidebar</span>
                             </label>
                         </div>
                     </li>

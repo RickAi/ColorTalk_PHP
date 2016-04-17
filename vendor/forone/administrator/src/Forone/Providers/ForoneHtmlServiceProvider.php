@@ -286,7 +286,7 @@ class ForoneHtmlServiceProvider extends ServiceProvider
             $html .= '<div class="panel-heading">' . $title . '</div>';
             $html .= '<div class="panel-body b-b b-light">';
             if (array_key_exists('new', $data)) {
-                $html .= '<a href="' . $this->url->current() . '/create" class="btn btn-primary">&#43; new</a>';
+                $html .= '<a href="' . $this->url->current() . '/create" class="btn btn-primary">&#43; New</a>';
             }
             if (array_key_exists('filters', $data)) {
 
