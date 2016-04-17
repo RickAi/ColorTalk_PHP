@@ -3,7 +3,7 @@
 @section('main')
 
     {!! Html::list_header([
-    'new'=>true,
+    'New'=>true,
     ]) !!}
 
     {!! Html::datagrid($results) !!}

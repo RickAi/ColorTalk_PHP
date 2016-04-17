@@ -1,6 +1,6 @@
 @extends('forone::layouts.master')
 
-@section('title', 'create'.$page_name)
+@section('title', 'Create '.$page_name)
 
 @section('main')
 
@@ -11,7 +11,7 @@
         {!! Form::open(['url'=>'admin/'.$uri,'class'=>'form-horizontal']) !!}
     @endif
     @include('forone::'. $uri.'.form')
-    {!! Form::panel_end('save') !!}
+    {!! Form::panel_end('Save') !!}
     {!! Form::close() !!}
 
 @stop

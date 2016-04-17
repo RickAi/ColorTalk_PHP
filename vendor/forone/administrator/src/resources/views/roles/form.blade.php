@@ -1,8 +1,8 @@
 @if(!isset($edit))
-{!! Form::group_text('name','系统名称','请输入角色系统名称') !!}
+{!! Form::group_text('name','Role Name','please enter role name') !!}
 @endif
-{!! Form::group_text('display_name','显示名称','请输入角色显示名称') !!}
-{!! Form::group_text('description','角色描述','请输入角色描述') !!}
+{!! Form::group_text('display_name','Display Name','please enter role display name') !!}
+{!! Form::group_text('description','Description','please enter role description') !!}
 
 @section('js')
     @parent
