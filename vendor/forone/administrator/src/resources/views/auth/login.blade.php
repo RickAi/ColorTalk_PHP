@@ -19,7 +19,6 @@
         </div>
 
         <div class="p-lg panel md-whiteframe-z1 text-color m">
-            <div class="m-b text-sm">login</div>
             <form name="form" action="{{ url('/admin/auth/login') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -33,7 +32,7 @@
                 </div>
                 <div class="m-b-md">
                     <label class="md-check">
-                        <input type="checkbox" name="remember"><i class="indigo"></i> remember me
+                        <input type="checkbox" name="remember"><i class="indigo"></i> Remember Me
                     </label>
                 </div>
                 <button md-ink-ripple type="submit" class="md-btn md-raised pink btn-block p-h-md">login</button>
