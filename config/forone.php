@@ -14,7 +14,7 @@ return [
     ],
     'site_config' => [
         'site_name' => 'ColorTalk Console',
-        'title' => 'ColorTalk Console',
+        'title' => '',
         'description' => 'Color Talk information management system',
         'logo' => 'vendor/forone/images/logo.png'
     ],

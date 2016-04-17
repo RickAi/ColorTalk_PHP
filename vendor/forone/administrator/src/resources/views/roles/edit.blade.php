@@ -1,6 +1,6 @@
 @extends('forone::layouts.master')
 
-@section('title', 'update'.$page_name)
+@section('title', 'Update '.$page_name)
 
 @section('main')
 

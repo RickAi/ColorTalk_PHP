@@ -1,10 +1,10 @@
 @extends('forone::layouts.master')
 
-@section('title', 'create'.$page_name)
+@section('title', 'Create '.$page_name)
 
 @section('main')
 
-    {!! Form::panel_start('create'.$page_name) !!}
+    {!! Form::panel_start('Create '.$page_name) !!}
     @if (Input::old())
         {!! Form::model(Input::old(),['url'=>'admin/'.$uri,'class'=>'form-horizontal']) !!}
     @else
