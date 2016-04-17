@@ -12,38 +12,38 @@ return [
         'administrator_table' => 'users',
         'administrator_auth_controller' => 'Forone\Admin\Controllers\Auth\AuthController'
     ],
-    'site_config'                 => [
-        'site_name'   => 'ColorTalk Console',
-        'title'       => 'your site title',
-        'description' => 'you site description',
-        'logo'        => 'vendor/forone/images/logo.png'
+    'site_config' => [
+        'site_name' => 'ColorTalk Console',
+        'title' => 'ColorTalk Console',
+        'description' => 'Color Talk information management system',
+        'logo' => 'vendor/forone/images/logo.png'
     ],
-    'RedirectAfterLoginPath'      => 'admin/roles', // 登录后跳转页面
+    'RedirectAfterLoginPath' => 'admin/roles', // 登录后跳转页面
     'RedirectIfAuthenticatedPath' => 'admin/roles', // 如果授权后直接跳转到指定页面
 
-    'menus'                       => [
-        '系统设置' => [
-            'icon'       => 'mdi-toggle-radio-button-on',
+    'menus' => [
+        'System config' => [
+            'icon' => 'mdi-toggle-radio-button-on',
             'permission' => 'admin',
-            'children'   => [
-                '角色管理'  => [
+            'children' => [
+                'Roles' => [
                     'uri' => 'roles',
                 ],
-                '权限管理'  => [
+                'Permissions' => [
                     'uri' => 'permissions',
                 ],
-                '管理员管理' => [
+                'Managers' => [
                     'uri' => 'admins',
                 ]
             ],
         ],
     ],
 
-    'qiniu'                       => [
+    'qiniu' => [
 
-        'host'       => env('QINIU_HOST', 'http://7xlntj.com2.z0.glb.qiniucdn.com/'), //your qiniu host url
+        'host' => env('QINIU_HOST', 'http://7xlntj.com2.z0.glb.qiniucdn.com/'), //your qiniu host url
         'access_key' => env('QINIU_AK', '7uuXy55ekyLfIw9gwI2Jr4Oin_9qHIQQfXi4ijL1'), //for test
         'secret_key' => env('QINIU_SK', 'FX8P2NE_iE2TR0pwMkK1f3ZErGqGlsmjffCOIZUq'), //for test
-        'bucket'     => env('QINIU_BT', 'poly')
+        'bucket' => env('QINIU_BT', 'poly')
     ]
 ];
