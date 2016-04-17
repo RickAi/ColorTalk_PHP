@@ -7,7 +7,7 @@
  */
 
 return [
-    'disable_routes' => false, //禁用自带routes，默认启用
+    'disable_routes' => false,
     'auth' => [
         'administrator_table' => 'users',
         'administrator_auth_controller' => 'Forone\Admin\Controllers\Auth\AuthController'
