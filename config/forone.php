@@ -34,6 +34,9 @@ return [
                 ],
                 'Managers' => [
                     'uri' => 'admins',
+                ],
+                "Images" => [
+                    "uri" => "images"
                 ]
             ],
         ],

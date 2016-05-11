@@ -131,12 +131,12 @@ class ForoneHtmlServiceProvider extends ServiceProvider
                                             'id'    => $item->id,
                                             'class' => 'btn-success'
                                         ], ['enabled' => true]);
-                                    } else if ($value == '查看') {
+                                    } else if ($value == 'Detail') {
                                         $html .= '<a href="' . $this->url->current() . '/' . $item->id . '">
-                                                    <button class="btn">查看</button></a>';
-                                    } else if ($value == '编辑') {
+                                                    <button class="btn">Detail</button></a>';
+                                    } else if ($value == 'Edit') {
                                         $html .= '<a href="' . $this->url->current() . '/' . $item->id . '/edit">
-                                                    <button class="btn">编辑</button></a>';
+                                                    <button class="btn">Edit</button></a>';
                                     }
                                 } else {
                                     $getButton = sizeof($button) > 2 ? true : false;
