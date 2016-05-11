@@ -8,6 +8,7 @@
 
 namespace Forone\Admin\Providers;
 
+use App\Image;
 use Form;
 use Html;
 use Illuminate\Support\Facades\Input;
@@ -137,6 +138,11 @@ class ForoneHtmlServiceProvider extends ServiceProvider
                                     } else if ($value == 'Edit') {
                                         $html .= '<a href="' . $this->url->current() . '/' . $item->id . '/edit">
                                                     <button class="btn">Edit</button></a>';
+                                    } else if($value == 'Delete'){
+                                        if($item instanceof Image){
+                                            $html .= '<a href="' . $this->url->current() . '/' . $item->id . '/destroyImage">
+                                                    <button class="btn btn-danger">Delete</button></a>';
+                                        }
                                     }
                                 } else {
                                     $getButton = sizeof($button) > 2 ? true : false;

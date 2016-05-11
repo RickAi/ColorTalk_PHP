@@ -19,11 +19,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth', 'admin.permiss
     Route::group(['namespace' => '\Forone\Admin\Controllers\Permissions'], function () {
         Route::resource('roles', 'RolesController');
         Route::resource('permissions', 'PermissionsController');
-        Route::resource('images', 'ImagesController');
         Route::resource('admins', 'AdminsController');
         Route::resource('navs', 'NavsController');
         Route::post('roles/assign-permission', ['as' => 'admin.roles.assign-permission', 'uses' => 'RolesController@assignPermission']);
         Route::post('admins/assign-role', ['as' => 'admin.roles.assign-role', 'uses' => 'AdminsController@assignRole']);
+
+        // Image console
+        Route::get('images/{images}/destroyImage', 'ImagesController@destroyImage');
+        Route::resource('images', 'ImagesController');
     });
 
 });

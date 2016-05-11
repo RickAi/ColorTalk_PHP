@@ -30,7 +30,7 @@ class ImagesController extends BaseController {
                 ['Operation', 'buttons', function ($data) {
                     $buttons = [
                         ['Detail'],
-                        ['Edit'],
+                        ['Delete'],
                     ];
                     return $buttons;
                 }]
@@ -40,26 +40,6 @@ class ImagesController extends BaseController {
         $results['items'] = $paginate;
 
         return $this->view('forone::' . $this->uri.'.index', compact('results'));
-    }
-
-    /**
-     *
-     * @return View
-     */
-    public function create()
-    {
-        return $this->view('forone::'.$this->uri.'.create');
-    }
-
-    /**
-     *
-     * @param CreateRoleRequest $request
-     * @return View
-     */
-    public function store(Request $request)
-    {
-        Image::create($request->except('id', '_token'));
-        return $this->toIndex('save success');
     }
 
     /**
@@ -78,19 +58,13 @@ class ImagesController extends BaseController {
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id, Request $request)
-    {
+    public function destroyImage(Image $image){
+        $image->delete();
+        return $this->toIndex('Delete success!');
+    }
 
-        $data = $request->except('_token');
-        Image::findOrFail($id)->update($data);
-
-        return $this->toIndex('编辑成功');
+    public function show(Image $image){
+        return $this->view('forone::' . $this->uri . '.show');
     }
 
 }
