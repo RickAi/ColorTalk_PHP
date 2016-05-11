@@ -3,22 +3,26 @@
 @section('main')
 
     {!! Html::list_header([
-    'title' => '试题详细',
+    'title' => 'Image detail',
     ]) !!}
 
     <div class="table-responsive">
         <table class="table">
             <tbody>
-            {{--题目信息--}}
             <tr class="info">
-                <th>题目信息</th>
-                <th></th>
+                <th>User ID</th>
+                <th>{!! $image_data["user_id"] !!}</th>
             </tr>
 
-            {{--答案信息--}}
             <tr class="info">
-                <th>答案信息</th>
-                <th></th>
+                <th>Image Type</th>
+                <th>{!! $image_data["type"] !!}</th>
+            </tr>
+
+            <tr class="info">
+                <th>Image Content</th>
+                <th><img class="img-responsive"
+                         src="{!!  $image_data["url"] !!}"></th>
             </tr>
             </tbody>
 

@@ -64,7 +64,8 @@ class ImagesController extends BaseController {
     }
 
     public function show(Image $image){
-        return $this->view('forone::' . $this->uri . '.show');
+        $image_data = $image->toArray();
+        return $this->view('forone::' . $this->uri . '.show', compact('image_data'));
     }
 
 }
