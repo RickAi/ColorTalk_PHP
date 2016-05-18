@@ -29,6 +29,7 @@ $api->version('v1', function ($api) {
         // POST ['uid', 'is_third']
         $api->post('login', 'UserController@login');
         $api->get('users', 'UserController@getUsers');
+        $api->get('users/{users}/user_info', 'UserController@userInfo');
 
         /*
          * Image

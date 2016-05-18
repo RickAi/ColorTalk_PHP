@@ -49,4 +49,13 @@ class UserController extends BaseController
             return $this->response->error($result_array['message'], 422);
         }
     }
+
+    public function userInfo(User $user){
+        $userInfo = $user->userInfo;
+        if($userInfo != null){
+            return response()->json($userInfo);
+        } else{
+            return $this->response->error(['result', 'failed'], 422);
+        }
+    }
 }

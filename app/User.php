@@ -70,6 +70,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\MomentLike');
     }
 
+    public function userInfo(){
+        return $this->hasOne('App\UserInfo');
+    }
+
     public static function isAccountRegistered($email)
     {
         return (User::where('email', $email)->first() != null);
