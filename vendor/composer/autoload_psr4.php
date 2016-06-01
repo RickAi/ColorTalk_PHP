@@ -29,6 +29,7 @@ return array(
     'Qiniu\\' => array($vendorDir . '/qiniu/php-sdk/src/Qiniu'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src/Psy'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'Pelago\\' => array($vendorDir . '/pelago/emogrifier/Classes'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Fractal\\' => array($vendorDir . '/league/fractal/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),

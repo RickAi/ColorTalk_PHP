@@ -155,8 +155,7 @@ return [
         Forone\Admin\Providers\ForoneServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         itbdw\QiniuStorage\QiniuFilesystemServiceProvider::class,
-
-
+        Snowfire\Beautymail\BeautymailServiceProvider::class,
     ],
 
     /*

@@ -11,7 +11,8 @@
         "league/fractal": "^0.13.0@dev",
         "zizaco/entrust": "dev-laravel-5",
         "itbdw/laravel-storage-qiniu": "^1.0",
-        "dingo/api": "1.0.x@dev"
+        "dingo/api": "1.0.x@dev",
+        "snowfire/beautymail": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

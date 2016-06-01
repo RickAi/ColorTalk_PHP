@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Snowfire\Beautymail\Beautymail;
 
 class UserController extends BaseController
 {
@@ -53,7 +54,21 @@ class UserController extends BaseController
     public function forget(Request $request){
         $payload = $request->all();
         $email = $payload['email'];
-        
+
+        try{
+            $beautymail = app()->make(Beautymail::class);
+            $beautymail->send('emails.welcome', ['email' => $email], function($message) use ($email)
+            {
+                $message
+                    ->from('ayb854@163.com')
+                    ->to($email, 'ColorTalk User')
+                    ->subject('Reset the password.');
+            });
+            return response()->json(['result' => true]);
+        } catch(\Exception $e){
+            return response()->json(['result' => false]);
+        }
+
     }
 
     public function register(Request $request){

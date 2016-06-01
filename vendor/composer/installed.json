@@ -3210,7 +3210,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/be28aa634c44551ae5187894c903094a8ce8baee",
+            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/3936ecf81efe2e124998b657a7adf03106e279e6",
             "reference": "be28aa634c44551ae5187894c903094a8ce8baee",
             "shasum": ""
         },
@@ -3975,7 +3975,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/fractal/zipball/84cb4d3a96b0f8465caf113690c3470fa11f2b36",
+            "url": "https://api.github.com/repos/thephpleague/fractal/zipball/d2be7f6a5b770c28272f575d48ae48bb73b35a31",
             "reference": "84cb4d3a96b0f8465caf113690c3470fa11f2b36",
             "shasum": ""
         },
@@ -4157,7 +4157,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/dingo/api/zipball/b36db17c7294e44e6ce7039952ca8f8d57caab37",
+            "url": "https://api.github.com/repos/dingo/api/zipball/8cd1a6cd7d2ba9fc96841fd0745ef8fc1ce2a530",
             "reference": "b36db17c7294e44e6ce7039952ca8f8d57caab37",
             "shasum": ""
         },
@@ -4222,6 +4222,115 @@
             "dingo",
             "laravel",
             "restful"
+        ]
+    },
+    {
+        "name": "pelago/emogrifier",
+        "version": "V1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jjriv/emogrifier.git",
+            "reference": "1160bcbc523c7941d2d0dc2a9e59c51c66420b4b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jjriv/emogrifier/zipball/1160bcbc523c7941d2d0dc2a9e59c51c66420b4b",
+            "reference": "1160bcbc523c7941d2d0dc2a9e59c51c66420b4b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.8.11",
+            "squizlabs/php_codesniffer": "2.3.4",
+            "typo3-ci/typo3sniffpool": "2.1.1"
+        },
+        "time": "2015-10-14 22:22:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pelago\\": "Classes/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "John Reeve",
+                "email": "jreeve@pelagodesign.com"
+            },
+            {
+                "name": "Cameron Brooks"
+            },
+            {
+                "name": "Jaime Prado"
+            },
+            {
+                "name": "Oliver Klee",
+                "email": "typo3-coding@oliverklee.de"
+            },
+            {
+                "name": "Roman Ožana",
+                "email": "ozana@omdesign.cz"
+            }
+        ],
+        "description": "Converts CSS styles into inline style attributes in your HTML code",
+        "homepage": "http://www.pelagodesign.com/sidecar/emogrifier/"
+    },
+    {
+        "name": "snowfire/beautymail",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Snowfire/Beautymail.git",
+            "reference": "6fcc97799f01ca14da50d6b1d864d954ee6d5ce2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Snowfire/Beautymail/zipball/6fcc97799f01ca14da50d6b1d864d954ee6d5ce2",
+            "reference": "6fcc97799f01ca14da50d6b1d864d954ee6d5ce2",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "4.*|5.*",
+            "pelago/emogrifier": "@dev",
+            "php": ">=5.4.0"
+        },
+        "time": "2016-05-23 13:21:50",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Snowfire\\Beautymail\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emil Sundberg",
+                "email": "emil@snowfire.net"
+            }
+        ],
+        "description": "Send beautiful html emails with Laravel",
+        "keywords": [
+            "email",
+            "html",
+            "laravel"
         ]
     }
 ]
