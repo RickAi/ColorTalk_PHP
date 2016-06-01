@@ -50,6 +50,24 @@ class UserController extends BaseController
         }
     }
 
+    public function forget(Request $request){
+        $payload = $request->all();
+        $email = $payload['email'];
+        
+    }
+
+    public function register(Request $request){
+        $payload = $request->all();
+        $result_array = $this->userRepo->registerUser($payload);
+
+        if($result_array['result']){
+            $user = $result_array['content'];
+            return response()->json($user);
+        } else{
+            return $this->response->error($result_array['message'], 422);
+        }
+    }
+
     public function userInfo(User $user){
         $userInfo = $user->userInfo;
         if($userInfo != null){

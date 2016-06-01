@@ -28,6 +28,8 @@ $api->version('v1', function ($api) {
         // POST ['email', 'password', 'is_third']
         // POST ['uid', 'is_third']
         $api->post('login', 'UserController@login');
+        $api->post('register', 'UserController@register');
+        $api->post('forget', 'UserController@forget');
         $api->get('users', 'UserController@getUsers');
         $api->get('users/{users}/user_info', 'UserController@userInfo');
 
