@@ -55,7 +55,12 @@ class UserController extends BaseController
         $payload = $request->all();
         $email = $payload['email'];
 
+        $user = User::getLocalUserByEmail($email);
+
         try{
+            if($user == null){
+                return response("failed", 422);
+            }
             $beautymail = app()->make(Beautymail::class);
             $beautymail->send('emails.welcome', ['email' => $email], function($message) use ($email)
             {
@@ -64,11 +69,10 @@ class UserController extends BaseController
                     ->to($email, 'ColorTalk User')
                     ->subject('Reset the password.');
             });
-            return response()->json(['result' => true]);
+            return response()->json($user);
         } catch(\Exception $e){
-            return response()->json(['result' => false]);
+            return $this->response->error(['result', 'failed'], 422);
         }
-
     }
 
     public function register(Request $request){

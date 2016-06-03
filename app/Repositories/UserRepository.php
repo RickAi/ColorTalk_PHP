@@ -55,6 +55,7 @@ class UserRepository
                 'nickname' => 'New User',
                 'icon_url' => 'http://s33.postimg.org/hv2ari8a7/1464809650_unknown.png'
             ]);
+            \DB::commit();
             return array('result' => true, 'content' => $user);
         } catch (\Exception $e) {
             \DB::rollBack();
